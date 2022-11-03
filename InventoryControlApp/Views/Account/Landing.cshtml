@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Account Landing Page";
+    Layout = "_Layout";
+}
+<div class="text-body text-black text-left bg-white rounded">
+    <h1>@ViewBag.Title</h1>
+
+    @*<p>Hello @User.Identity.Name</p>*@
+    <a href="/Order/CustomerOrderList">All Orders</a> <br />
+
+
+ @*   @await Component.InvokeAsync("SingleOrder",1)*@
+    <form asp-controller="Order" asp-action="SingleOrder" asp-route-orderID="">
+        <span><label>Retrieve order by Order ID</label></span>
+        <br/>
+        <input type="number" name="orderID" />
+        <button type="submit"></button>
+    </form>
+
+
+</div> 

@@ -1,0 +1,28 @@
+﻿@model InventoryControlApp.Models.ViewModels.LoginModel
+@{
+    ViewBag.Title = "Create User Account";
+    Layout = "_Layout";
+}
+<div asp-validation-summary="All" class="text-danger"></div>
+<div class="text-body text-black text-left bg-white rounded">
+    <form method="post" asp-action="Create" asp-antiforgery="true" class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label" asp-for="UserName">User Name:</label>
+            <input class="form-control" asp-for="UserName" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="Password">Password:</label>
+            <input class="form-control" asp-for="Password" type="password" />
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-primary">Create</button>
+
+                <button type="reset" class="btn btn-primary">Reset</button>
+                <a asp-action="Index" class="btn btn-primary">Cancel</a>
+            </div>
+        </div>
+        <a asp-action="login" asp-controller="Account">Already have an account? Click Here to login!</a>
+
+    </form>
+</div>
